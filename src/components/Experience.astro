@@ -1,20 +1,27 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
+
 const EXPERIENCE = [
   {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
+    date: "July 2024 - Present",
+    title: "MFG Systems Engineer",
+    company: "BI Incorporated, Boulder, CO",
     description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+      "Lead developer for internal manufacturing test software used across production lines. Integrated robotic arms and automation systems to streamline product testing and reduce manual errors. Designed and maintained critical communication layers between robotic systems and proprietary software tools. Collaborated with cross-functional teams to troubleshoot firmware and hardware integration issues.",
   },
   {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
+    date: "November 2023 - July 2024",
+    title: "Methods and Procedures Support",
+    company: "BI Incorporated, Boulder, CO",
     description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+      "Supported developing and maintaining internal manufacturing software tools used for product validation. Assisted in the documentation and implementation of testing procedures for new and existing hardware systems. Collaborated with engineers to troubleshoot issues on the manufacturing floor, gather feedback from operators, and improve the reliability of production workflows. Contributed to scripting tasks using VB.NET and SQL to streamline reporting and data analysis.",
+  },
+  {
+    date: "June 2021 - November 2023",
+    title: "Technical Support Specialist I",
+    company: "Intrado, Longmont, CO",
+    description:
+      "Provided Tier I support for enterprise appointment reminder platforms. Created customized logic to automate reminder systems based on client data from Excel and Word documents. Assisted with onboarding and support for high-profile clients, ensuring 99%+ system uptime.",
   },
 ]
 ---
@@ -22,7 +29,7 @@ const EXPERIENCE = [
 <ol class="relative mt-16">
   {
     EXPERIENCE.map((experience) => (
-      <li class="">
+      <li>
         <ExperienceItem {...experience} />
       </li>
     ))
