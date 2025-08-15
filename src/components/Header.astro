@@ -2,37 +2,6 @@
 import ThemeToggle from "./ThemeToggle.astro"
 
 const navItems = [
-<<<<<<< HEAD
-  {
-    title: "Experience",
-    label: "experience",
-    url: "/#experience",
-  },
-  {
-    title: "Projects",
-    label: "projects",
-    url: "/#projects",
-  },
-  {
-    title: "About Me",
-    label: "about-me",
-    url: "/#about-me",
-  },
-  {
-    title: "Contact",
-    label: "contact",
-    url: "mailto:fernandezg749@gmail.com",
-  },
-]
----
-
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-red-700 dark:text-white justify-center items-center bg-white dark:bg-red-900 shadow-md"
-  >
-=======
   { title: "Home",       label: "home",        url: "#home" },
   { title: "Experience", label: "experience",  url: "#experience" },
   { title: "About Me",   label: "about-me",    url: "#about-me" },
@@ -42,7 +11,6 @@ const navItems = [
 
 <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
   <nav class="flex px-3 text-sm font-medium rounded-full text-red-700 dark:text-white justify-center items-center bg-white dark:bg-red-900 shadow-md">
->>>>>>> 714992c (Initial commit: Astro portfolio)
     {
       navItems.map((link) => (
         <a
@@ -60,28 +28,6 @@ const navItems = [
 
 <script is:inline>
   document.addEventListener("astro:page-load", () => {
-<<<<<<< HEAD
-    const sections = Array.from(document.querySelectorAll("section"));
-    const navItems = Array.from(document.querySelectorAll("header nav a"));
-
-    function updateActiveLink() {
-      const scrollPosition = window.scrollY + window.innerHeight * 0.65;
-      let currentId = null;
-
-      // If user is very high up, don't highlight anything
-      if (window.scrollY < 100) {
-        navItems.forEach((item) => {
-          item.classList.remove("text-red-500");
-        });
-        return;
-      }
-
-      for (let section of sections) {
-        const offsetTop = section.offsetTop;
-        const offsetBottom = offsetTop + section.offsetHeight;
-
-        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-=======
     const sections = Array.from(document.querySelectorAll("section[id]"));
     const links = Array.from(document.querySelectorAll("header nav a"));
 
@@ -106,29 +52,10 @@ const navItems = [
         const top = section.offsetTop;
         const bottom = top + section.offsetHeight;
         if (scrollPosition >= top && scrollPosition < bottom) {
->>>>>>> 714992c (Initial commit: Astro portfolio)
           currentId = section.id;
           break;
         }
       }
-<<<<<<< HEAD
-
-      navItems.forEach((item) => {
-        const isActive = item.getAttribute("aria-label") === currentId;
-        item.classList.toggle("text-red-500", isActive);
-      });
-    }
-
-    updateActiveLink(); // Run on load
-    window.addEventListener("scroll", updateActiveLink);
-  });
-</script>
-
-
-
-
-<style>
-=======
       setActive(currentId || "home");
     }
 
@@ -148,31 +75,15 @@ const navItems = [
   html { scroll-behavior: smooth; }
   section { scroll-margin-top: 96px; } /* match your fixed header height */
 
->>>>>>> 714992c (Initial commit: Astro portfolio)
   nav {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
-<<<<<<< HEAD
-
-  nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
-  }
-
-  @keyframes nav-shadown {
-    0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
-    }
-    to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
-    }
-=======
   nav { @apply dark:bg-gray-800/90 bg-white/50; }
 
   @keyframes nav-shadown {
     0% { @apply dark:bg-gray-800/0 bg-white/0; }
     to { @apply shadow-lg ring-1 backdrop-blur ring-white/10; }
->>>>>>> 714992c (Initial commit: Astro portfolio)
   }
 </style>
